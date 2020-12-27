@@ -1,0 +1,12 @@
+[Unit]
+Description=intro_rsa_encode_service
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=5
+Restart=always
+ExecStart=/usr/bin/docker run -p 4001:4001 intro_rsa_encode:1.0.0
+
+[Install]
+WantedBy=default.target

@@ -8,16 +8,16 @@ host="0.0.0.0"
 port = 4002
 
 chars = "1234567890_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-random.seed(42)
+random.seed(44)
 flag = [random.choice(chars) for _ in range(32)]
 flag = ("DCyberSec_{" + "".join(flag) + "}").encode("utf-8")
 random.seed()
 def md5_example():
     # We will generate primes
-    m = str(random.getrandbits(32)).strip()
+    m ="".join([random.choice(chars) for _ in range(20)]).strip()
     md5 = hashlib.md5(m.encode("ascii"))
     hashed = md5.hexdigest().strip()
-    out = "I need to hash this number " + str(m) + " " + hashed + " ?\n" 
+    out = "I need to hash this message '" + str(m)+  "' ?\n" 
     return (out, hashed)
 
 sel = selectors.DefaultSelector()
