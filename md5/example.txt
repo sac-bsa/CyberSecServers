@@ -1,0 +1,11 @@
+~ $ nc mackgregory.ml 4002
+I need to hash this message 'qUBsliA5U8sCb8aDHz5x' ?
+^Z
+[1]+  Stopped                 nc mackgregory.ml 4002
+~ $ echo -n "qUBsliA5U8sCb8aDHz5x" | md5sum
+37e0c039d15128233b2978e30b86e57a  -
+~ $ fg 1
+nc mackgregory.ml 4002
+37e0c039d15128233b2978e30b86e57a
+DCyberSec_{pwxHS8andh2d8z17_MvHiHDnAoMHFjl5}
+

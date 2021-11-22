@@ -1,0 +1,15 @@
+[Unit]
+Description=intro md5 server
+After=network.target
+Requires=network.target
+
+[Service]
+Type=simple
+User={unprivledged}
+Group={unprivledged}
+TimeoutStartSec=infinity
+Restart=always
+ExecStart=python3 ${SERVER_DIR}/md5/md5.py
+
+[Install]
+WantedBy=default.target

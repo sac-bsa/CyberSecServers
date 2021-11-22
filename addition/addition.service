@@ -1,0 +1,15 @@
+[Unit]
+Description=addition server
+After=network.target
+Requires=network.target
+
+[Service]
+Type=simple
+User={unprivledged}
+Group={unprivledged}
+TimeoutStartSec=infinity
+Restart=always
+ExecStart=python3 ${SERVER_DIR}/addition/addition.py
+
+[Install]
+WantedBy=default.target
